@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "debug": "tsc && node --inspect-brk --nolazy bin/index.js",
-    "start": "node bin/index.js",
+    "debug": "tsc && node --inspect-brk --nolazy bin/server.js",
+    "start": "node bin/server.js",
     "test": "mocha -r ts-node/register --reporter-options mochaFile=testReport/test-results.xml --reporter mocha-junit-reporter tests/**/*.ts",
     "test-debug": "mocha -r ts-node/register --inspect-brk tests/**/*.ts",
     "test-local": "mocha -r ts-node/register tests/**/*.ts",
@@ -26,6 +26,12 @@
   },
   "homepage": "https://github.com/psbds/typescript-default-project#readme",
   "dependencies": {
+    "body-parser": "1.18.2",
+    "compression": "1.7.1",
+    "cookie-parser": "1.4.3",
+    "cors": "2.8.5",
+    "helmet": "3.9.0",
+    "express": "^4.17.1",
     "dotenv": "^8.2.0",
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.0",
