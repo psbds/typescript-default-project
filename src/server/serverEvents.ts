@@ -1,4 +1,3 @@
-import * as debug from 'debug';
 import { Address } from 'cluster';
 
 export function onError(error: NodeJS.ErrnoException, port: number | string | boolean): void {
@@ -11,17 +10,12 @@ export function onError(error: NodeJS.ErrnoException, port: number | string | bo
     switch (error.code) {
         case 'EACCES':
             console.error(`${bind} requires elevated privileges`);
-            process.exit(1);
-
             break;
         case 'EADDRINUSE':
             console.error(`${bind} is already in use`);
-            process.exit(1);
-
             break;
-        default:
-            throw error;
     }
+    process.exit(1);
 }
 
 export function onListening(): void {
@@ -29,5 +23,4 @@ export function onListening(): void {
     const bind: string = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
 
     console.log(`Listening on ${bind}`);
-    debug(`Listening on ${bind}`);
 }

@@ -19,7 +19,11 @@
                 "${workspaceRoot}/bin"
             ],
             "sourceMaps": true,
-            "timeout": 30000
+            "timeout": 30000,
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outputCapture": "std"
         },
         {
             "type": "node",
@@ -36,7 +40,11 @@
                 "${workspaceRoot}/bin"
             ],
             "sourceMaps": true,
-            "timeout": 30000
+            "timeout": 30000,
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outputCapture": "std"
         }
     ]
 }
